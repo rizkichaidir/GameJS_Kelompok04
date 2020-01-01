@@ -42,7 +42,7 @@ var draw = function () {
   });
 
   //draw the destination
-  context.fillStyle = '#44bb77';
+  context.fillStyle = 'red';
   context.strokeStyle = '#006600';
   context.lineJoin = 'miter';
   context.lineWidth = .05;
