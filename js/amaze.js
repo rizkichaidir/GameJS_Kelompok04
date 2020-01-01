@@ -65,7 +65,7 @@ var draw = function () {
 
    //draw the path
   if(path.length) {
-    context.strokeStyle = '#ffdddd';
+    context.strokeStyle = 'white';
     context.lineCap = 'round';
     context.lineJoin = 'round';
     context.lineWidth = .2;
