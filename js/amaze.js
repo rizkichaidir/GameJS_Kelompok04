@@ -62,3 +62,19 @@ var draw = function () {
   })(end[0] + .5, end[1] + .5, 5, .33, .16);
   context.stroke();
   context.fill();
+
+   //draw the path
+  if(path.length) {
+    context.strokeStyle = '#ffdddd';
+    context.lineCap = 'round';
+    context.lineJoin = 'round';
+    context.lineWidth = .2;
+    context.beginPath();
+    context.moveTo(path[0][0] + .5, path[0][1] + .5);
+    path.forEach(function (pt) {
+      context.lineTo(pt[0] + .5, pt[1] + .5);
+    });
+    context.lineTo(start[0] + .5, start[1] + .5);
+    context.stroke();
+    context.closePath();
+  }
