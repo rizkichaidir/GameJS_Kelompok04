@@ -43,7 +43,7 @@ var draw = function () {
 
   //draw the destination
   context.fillStyle = 'red';
-  context.strokeStyle = '#006600';
+  context.strokeStyle = 'white';
   context.lineJoin = 'miter';
   context.lineWidth = .05;
   (function starPath(x, y, n, or, ir) {
