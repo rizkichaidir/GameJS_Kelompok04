@@ -78,3 +78,21 @@ var draw = function () {
     context.stroke();
     context.closePath();
   }
+
+   //draw the current position
+  context.fillStyle = '#6699cc';
+  context.strokeStyle = '#003399';
+  context.lineJoin = 'miter';
+  context.lineWidth = .05;
+  context.beginPath();
+  context.arc(start[0] + .5, start[1] + .5, .25, 0, 2 * Math.PI);
+  context.closePath();
+  context.stroke();
+  context.fill();
+
+  //did you win
+  if(start[0] == end[0] && start[1] == end[1]) {
+    alert('MENANG KAU!');
+    reset();
+  } 
+};
