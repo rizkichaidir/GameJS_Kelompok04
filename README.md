@@ -3,3 +3,5 @@
 ## Rizky Chaidir
 ## Oan Sinaga
 ## Syifa Syabilla
+###
+### Credit Amaze GH Pages
