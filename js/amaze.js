@@ -40,3 +40,25 @@ var draw = function () {
       context.closePath;
     });
   });
+
+  //draw the destination
+  context.fillStyle = '#44bb77';
+  context.strokeStyle = '#006600';
+  context.lineJoin = 'miter';
+  context.lineWidth = .05;
+  (function starPath(x, y, n, or, ir) {
+    var rot = -Math.PI / 2;
+    var step = Math.PI / n;
+    context.beginPath();
+    context.moveTo(x, y - or)
+    for (i = 0; i < n; i++) {
+      context.lineTo(x + Math.cos(rot) * or, y + Math.sin(rot) * or);
+      rot += step
+      context.lineTo(x + Math.cos(rot) * ir, y + Math.sin(rot) * ir);
+      rot += step
+    }
+    context.lineTo(x, y - or)
+    context.closePath();  
+  })(end[0] + .5, end[1] + .5, 5, .33, .16);
+  context.stroke();
+  context.fill();
