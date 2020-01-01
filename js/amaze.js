@@ -81,7 +81,7 @@ var draw = function () {
 
    //draw the current position
   context.fillStyle = 'green';
-  context.strokeStyle = '#003399';
+  context.strokeStyle = 'red';
   context.lineJoin = 'miter';
   context.lineWidth = .05;
   context.beginPath();
