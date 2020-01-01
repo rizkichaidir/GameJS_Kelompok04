@@ -25,7 +25,7 @@ var draw = function () {
   var scale = pixels / dimensions;
   var line = function(x1, y1, x2, y2) { context.moveTo(x1 + .5, y1 + .5); context.lineTo(x2 + .5, y2 + .5); };
   context.scale(scale,scale);
-  context.strokeStyle = 'black';
+  context.strokeStyle = 'white';
   context.lineCap = 'square';
   context.lineJoin = 'miter';
   context.lineWidth = .75;
