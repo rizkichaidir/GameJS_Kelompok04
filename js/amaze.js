@@ -96,3 +96,40 @@ var draw = function () {
     reset();
   } 
 };
+
+//initialize a new maze
+var reset = function () {
+  //clear the maze
+  cells = [];
+  for(var x = 0; x < dimensions; x++) {
+    cells.push([]);
+    for(var y = 0; y < dimensions; y++)
+      cells[x].push(0);
+  }
+
+  //get the shared walls between a cell and its neighbors
+  var getWalls = function(x, y) {
+    var walls = [];
+    [[x - 1, y, 1], [x + 1, y, 2], [x, y - 1, 4], [x, y + 1, 8] ].forEach(function (n){
+      if(n[0] > -1 && n[0] < dimensions && n[1] > -1 && n[1] < dimensions && cells[n[0]][n[1]] == 0)
+        walls.push([[x, y], n]);
+    });
+    return walls;
+  };
+
+  //generate the maze starting at a random set of walls
+  var walls = getWalls(round(Math.random() * (dimensions - 1)), round(Math.random() * (dimensions - 1)));
+  while(walls.length) {
+    //randomly pick a wall
+    var index = (Math.random() * walls.length) | 0;
+    var from = walls[index][0];
+    var to = walls[index][1];
+    walls.splice(index, 1);
+    //connect it if its still needing connected
+    if(cells[to[0]][to[1]] == 0) {
+      cells[from[0]][from[1]] |= to[2];
+      cells[to[0]][to[1]] |= (to[2] + 1) % 3 == 0 ? to[2] >> 1 : to[2] << 1;
+      //add its relevant neighbors
+      walls = walls.concat(getWalls(to[0], to[1]));
+    }
+  }
