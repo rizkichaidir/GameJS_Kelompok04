@@ -174,3 +174,31 @@ function move(x, y) {
     draw();
   }
 }
+
+//move around the maze with arrow keys
+var onKeyPress = function(e) {
+  if(e.keyCode > 36 && e.keyCode < 41)
+    move(start[0] + ((e.keyCode - 38) % 2), start[1] + ((e.keyCode - 39) % 2));
+};
+
+//move around the maze with finger or mouse
+var onHover = function(e) {
+  //touch
+  if(e.changedTouches !== undefined) {
+    for(var i = 0; i < e.changedTouches.length; i++)
+      move((e.changedTouches[i].pageX / pixels * dimensions) | 0, (e.changedTouches[i].pageY / pixels * dimensions) | 0);
+  }//mouse
+  else if(e.clientX !== undefined)
+    move((e.clientX / pixels * dimensions) | 0, (e.clientY / pixels * dimensions) | 0);
+}
+
+//capture interaction
+var canvas = document.getElementById('maze');
+canvas.addEventListener('keypress', onKeyPress);
+canvas.addEventListener("touchstart", onHover, false);
+canvas.addEventListener("touchmove", onHover, false);
+canvas.addEventListener("mousemove", onHover, false);
+
+//capture screen updates
+window.onload = reset;
+window.onresize = draw;
