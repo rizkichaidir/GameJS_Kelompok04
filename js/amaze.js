@@ -92,7 +92,7 @@ var draw = function () {
 
   //did you win
   if(start[0] == end[0] && start[1] == end[1]) {
-    alert('MENANG KAU!');
+    alert('SELAMAT KAMU BERHASIL SAMPAI TUJUAN');
     reset();
   } 
 };
