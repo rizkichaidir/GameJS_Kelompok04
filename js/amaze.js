@@ -17,7 +17,7 @@ var draw = function () {
 
     //fill
   context.clearRect(0, 0, canvas.width, canvas.height);
-  context.fillStyle = 'black';
+  context.fillStyle = 'blue';
   context.fillRect(0, 0, canvas.width, canvas.height);
 
   //draw the maze
@@ -25,7 +25,7 @@ var draw = function () {
   var scale = pixels / dimensions;
   var line = function(x1, y1, x2, y2) { context.moveTo(x1 + .5, y1 + .5); context.lineTo(x2 + .5, y2 + .5); };
   context.scale(scale,scale);
-  context.strokeStyle = 'white';
+  context.strokeStyle = 'black';
   context.lineCap = 'square';
   context.lineJoin = 'miter';
   context.lineWidth = .75;
@@ -42,8 +42,8 @@ var draw = function () {
   });
 
   //draw the destination
-  context.fillStyle = '#44bb77';
-  context.strokeStyle = '#006600';
+  context.fillStyle = 'red';
+  context.strokeStyle = 'white';
   context.lineJoin = 'miter';
   context.lineWidth = .05;
   (function starPath(x, y, n, or, ir) {
@@ -65,7 +65,7 @@ var draw = function () {
 
    //draw the path
   if(path.length) {
-    context.strokeStyle = '#ffdddd';
+    context.strokeStyle = 'white';
     context.lineCap = 'round';
     context.lineJoin = 'round';
     context.lineWidth = .2;
@@ -80,8 +80,8 @@ var draw = function () {
   }
 
    //draw the current position
-  context.fillStyle = '#6699cc';
-  context.strokeStyle = '#003399';
+  context.fillStyle = 'red';
+  context.strokeStyle = 'green';
   context.lineJoin = 'miter';
   context.lineWidth = .05;
   context.beginPath();
