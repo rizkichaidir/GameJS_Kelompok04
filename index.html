@@ -1,0 +1,126 @@
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
+        <style>
+            html, body {
+    margin: 0;
+    padding: 0;
+                width: 100%;
+}
+            
+            .logo{
+                height: 300px;
+                position: absolute;
+                margin-top: 5%;
+                margin-left: 5%;
+                animation: heartbeat 5.5s ease-in-out infinite both;
+            }
+            @keyframes slide-in-blurred-right {
+                0% {
+                    transform: translateX(1000px) scaleX(2.5) scaleY(0.2);
+                    transform-origin: 0% 50%;
+                    filter: blur(40px);
+                    opacity: 0;
+                }
+                100% {
+                    transform: translateX(0) scaleY(1) scaleX(1);
+                    transform-origin: 50% 50%;
+                    filter: blur(0);
+                    opacity: 1;
+                }
+            }
+            @keyframes heartbeat {
+                from {
+                    transform: scale(1);
+                    transform-origin: center center;
+                    animation-timing-function: ease-out;
+                }
+                10% {
+                    transform: scale(0.91);
+                    animation-timing-function: ease-in;
+                }
+                17% {
+                    transform: scale(0.98);
+                    animation-timing-function: ease-out;
+                }
+                33% {
+                    transform: scale(0.87);
+                    animation-timing-function: ease-in;
+                }
+                45% {
+                    transform: scale(1);
+                    animation-timing-function: ease-out;
+                }
+            }
+
+            .tulisanTop{
+                font-family: 'Staatliches', cursive;
+                color: white;
+                padding-top: 16%;
+                padding-left: 30%;
+                transform: rotateZ(-20deg);
+                animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+            }
+            @keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+            
+            .button_cont{
+                padding-top: 10%;
+                bottom: 0;
+            }
+            .playButton {
+                color: #fff !important;
+                font-family: 'Staatliches', cursive;
+                font-size: 30px;
+                text-transform: uppercase;
+                text-decoration: none;
+                background: #ed3330;
+                padding: 20px;
+                border-radius: 5px;
+                display: inline-block;
+                border: none;
+                transition: all 0.4s ease 0s;
+                
+            }
+            .playButton:hover {
+                background: #434343;
+                letter-spacing: 1px;
+                box-shadow: 5px 40px -10px rgba(255,255,255,0.57);
+                transition: all 0.4s ease 0s;
+            }
+            .gambarChar{
+                float: left;
+            }
+            .char{
+                padding-top: 5%;
+                height: 500px;
+            }
+        
+        </style>
+    </head>
+    <body background="cityscene_sky.jpg">
+        <div class="page">
+            <img class="logo" src="MAZELOGO.png">
+            <div class="tulisanTop">
+                <h1>LETS HELP "M" AND "ZE" MEET EACH OTHER ...</h1>
+            </div>
+        </div>
+        <div class="button_cont" align="center">
+            <a class="playButton" href="https://underlords.com/">PLAY -     M"A"ZE</a>
+        </div>
+         <div class="gambarChar">
+                <img class="char" src="images.png">
+            </div>
+    </body>
+</html>
