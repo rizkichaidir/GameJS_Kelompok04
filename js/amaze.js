@@ -80,7 +80,7 @@ var draw = function () {
   }
 
    //draw the current position
-  context.fillStyle = '#6699cc';
+  context.fillStyle = 'green';
   context.strokeStyle = '#003399';
   context.lineJoin = 'miter';
   context.lineWidth = .05;
