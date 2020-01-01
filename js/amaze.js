@@ -156,3 +156,21 @@ var reset = function () {
 var solve = function () {
   //TODO: A*
 };
+
+//movement in general
+var keyToNeighbor = { '-1': {'0': 1}, '1': {'0': 2}, '0': {'-1': 4, '1': 8} };
+function move(x, y) {
+  //figure out which neighbor
+  var neighbor = 0;
+  try { neighbor = keyToNeighbor[x - start[0]][y -  start[1]]; } catch (e) { }
+  var mask = cells[start[0]][start[1]];
+  //is it a valid move
+  if(mask & neighbor) {
+    if(path.length && x == path[path.length - 1][0] && y == path[path.length - 1][1])
+      path.pop();
+    else
+      path.push(start);
+    start = [x, y];
+    draw();
+  }
+}
