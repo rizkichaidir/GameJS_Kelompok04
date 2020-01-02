@@ -25,7 +25,7 @@ var draw = function () {
   var scale = pixels / dimensions;
   var line = function(x1, y1, x2, y2) { context.moveTo(x1 + .5, y1 + .5); context.lineTo(x2 + .5, y2 + .5); };
   context.scale(scale,scale);
-  context.strokeStyle = 'white';
+  context.strokeStyle = 'black';
   context.lineCap = 'square';
   context.lineJoin = 'miter';
   context.lineWidth = .75;
@@ -42,7 +42,7 @@ var draw = function () {
   });
 
   //draw the destination
-  context.fillStyle = 'black';
+  context.fillStyle = 'red';
   context.strokeStyle = 'white';
   context.lineJoin = 'miter';
   context.lineWidth = .05;
@@ -92,7 +92,7 @@ var draw = function () {
 
   //did you win
   if(start[0] == end[0] && start[1] == end[1]) {
-    alert('MENANG KAU!');
+    alert('selamat kamu berhasil sampai tujuan!!');
     reset();
   } 
 };
