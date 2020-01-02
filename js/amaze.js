@@ -42,8 +42,8 @@ var draw = function () {
   });
 
   //draw the destination
-  context.fillStyle = 'black';
-  context.strokeStyle = 'red';
+  context.fillStyle = 'red';
+  context.strokeStyle = 'white';
   context.lineJoin = 'miter';
   context.lineWidth = .05;
   (function starPath(x, y, n, or, ir) {
@@ -80,8 +80,8 @@ var draw = function () {
   }
 
    //draw the current position
-  context.fillStyle = 'green';
-  context.strokeStyle = 'green';
+  context.fillStyle = 'green'
+  context.strokeStyle = 'red';
   context.lineJoin = 'miter';
   context.lineWidth = .05;
   context.beginPath();
@@ -92,7 +92,7 @@ var draw = function () {
 
   //did you win
   if(start[0] == end[0] && start[1] == end[1]) {
-    alert('selamat kamu berhasil sampai tujuan!!');
+    alert('SELAMAT KAMU BERHASIL SAMPAI TUJUAN');
     reset();
   } 
 };
