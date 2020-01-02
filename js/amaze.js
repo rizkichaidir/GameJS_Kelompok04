@@ -42,8 +42,8 @@ var draw = function () {
   });
 
   //draw the destination
-  context.fillStyle = 'red';
-  context.strokeStyle = 'white';
+  context.fillStyle = 'black';
+  context.strokeStyle = 'red';
   context.lineJoin = 'miter';
   context.lineWidth = .05;
   (function starPath(x, y, n, or, ir) {
