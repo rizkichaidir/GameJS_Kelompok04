@@ -17,7 +17,7 @@ var draw = function () {
 
     //fill
   context.clearRect(0, 0, canvas.width, canvas.height);
-  context.fillStyle = 'black';
+  context.fillStyle = 'blue';
   context.fillRect(0, 0, canvas.width, canvas.height);
 
   //draw the maze
@@ -25,7 +25,7 @@ var draw = function () {
   var scale = pixels / dimensions;
   var line = function(x1, y1, x2, y2) { context.moveTo(x1 + .5, y1 + .5); context.lineTo(x2 + .5, y2 + .5); };
   context.scale(scale,scale);
-  context.strokeStyle = 'blue';
+  context.strokeStyle = 'black';
   context.lineCap = 'square';
   context.lineJoin = 'miter';
   context.lineWidth = .75;
@@ -80,7 +80,7 @@ var draw = function () {
   }
 
    //draw the current position
-  context.fillStyle = 'green';
+  context.fillStyle = 'green'
   context.strokeStyle = 'red';
   context.lineJoin = 'miter';
   context.lineWidth = .05;
